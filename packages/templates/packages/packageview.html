@@ -1,0 +1,29 @@
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>Package name</th>
+		<th>Description</th>
+		<th>Available Package</th>
+        <th>Status</th>
+	</tr>
+    {% for i in x  %}
+	<tr>
+		<td>{{ i.package_name }}</td>
+		<td>{{ i.description }}</td>
+		<td>{{ i.status }}</td>
+    <td><a href="{% url 'de' idd=i.package_id %}">Approve</a> </td>
+    <td><a href="{% url 'fe' idd=i.package_id %}">Reject</a> </td>
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

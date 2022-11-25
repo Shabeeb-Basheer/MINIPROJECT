@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="2" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>Quotation name</th>
+		<th>Description</th>
+		<th>Status</th>
+	</tr>
+    {% for i in y %}
+	<tr>
+		<td>{{ i.quotation_name }}</td>
+		<td>{{ i.description }}</td>
+        <th>{{ i.status }}</th>
+{#        <td><a href="{% url 'qe' idd=i.quotation_id %}">approve</a> </td>#}
+{#		<td><a href="{% url 'qre' idd=i.quotation_id %}">reject</a> </td>#}
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
