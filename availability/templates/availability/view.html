@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>Available date</th>
+		<th>Status</th>
+{#        <th>status</th>#}
+	</tr>
+    {% for i in q %}
+	<tr>
+{#		<td>{{ i.complaint_id }}</td>#}
+		<td>{{ i.available_date }}</td>
+        <td>{{ i.status}}</td>
+    <td><a href="/availability/b/{{ i.a_id }}">Book Now</a></td>
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

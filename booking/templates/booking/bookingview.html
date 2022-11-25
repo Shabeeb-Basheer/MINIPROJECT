@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body><center>
+<h1>VIEW BOOKING</h1>
+<table border="" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>uid</th>
+{#		<th>status</th>#}
+		<th>Date</th>
+{#		<th>serviceid</th>#}
+        <th>Package</th>
+        <th>Customer status</th>
+        <th>Owner status</th>
+        <th>AC status</th>
+        <th>Time status</th>
+	</tr>
+    {% for i in x %}
+	<tr>
+		<td>{{ i.user.name }}</td>
+{#		<td>{{ i.status }}</td>#}
+		<td>{{ i.date }}</td>
+{#		<td>{{ i.service.service_name }}</td>#}
+		<td>{{ i.package.package_name }}</td>
+        <td>{{ i.status }}</td>
+        <td>{{ i.owner_status }}</td>
+        <td>{{ i.ac_status }}</td>
+        <td>{{ i.time_status }}</td>
+        <td><a href="{% url 'acc' idd=i.booking_id %}">Accept</a> </td>
+        <td><a href="{% url 'reject' idd=i.booking_id %}">Reject</a> </td>
+        <td><a href="{% url 'quo' idd=i.booking_id %}">Quotation</a> </td>
+	</tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

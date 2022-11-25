@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Availability</h1>
+<form method="post">
+    {% csrf_token %}
+	<table>
+
+
+{#         <tr>#}
+{#             <td>Username:#}
+{#                <select name="ur">#}
+{#                <option>-----select-----</option>#}
+{#                        {% for i in w %}#}
+{#                            <option value="{{ i.user_id}}">{{ i.name }}</option>#}
+{##}
+{##}
+{#                        {% endfor %}#}
+{#            </select>#}
+{#             </td>#}
+{##}
+{#		<tr>#}
+
+			<td>Available Date
+			<input type="date" name="a"></td>
+		</tr>
+{#		<tr>#}
+{#			<td>Description</td>#}
+{#			<td><input type="text" name="des"></td>#}
+{#		</tr>#}
+		<tr>
+			<td><input type="submit" name="add" style="background: #138496"></td>
+		</tr>
+{#		<tr>#}
+{#			<td><input type="submit" name="viewandupdate" value="view reply"></td>#}
+{#		</tr>#}
+	</table>
+</form>
+</body>
+</html>
+{% endblock %}

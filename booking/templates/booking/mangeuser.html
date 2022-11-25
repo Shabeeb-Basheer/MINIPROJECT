@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body><center>
+<h1>MANAGE BOOKING</h1>
+<table border="2" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>uid</th>
+		<th>Status</th>
+		<th>Date</th>
+		<th>Time status</th>
+        <th>AC status</th>
+		<th>Package</th>
+        <th>Owner status</th>
+	</tr>
+    {% for i in l %}
+	<tr>
+		<td>{{ i.user.name }}</td>
+		<td>{{ i.status }}</td>
+		<td>{{ i.date }}</td>
+        <td>{{ i.time_status }}</td>
+        <td>{{ i.ac_status }}</td>
+{#		<td>{{ i.service.service_name}}</td>#}
+		<td>{{ i.package.package_name }}</td>
+        <td>{{ i.owner_status }}</td>
+        <td><a href="{% url 'ca' idd=i.booking_id %}">Cancel</a> </td>
+	</tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>
+{% endblock %}
