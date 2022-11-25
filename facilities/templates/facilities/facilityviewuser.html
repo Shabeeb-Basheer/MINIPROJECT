@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>Facility name</th>
+		<th>Description</th>
+{#        <th>status</th>#}
+	</tr>
+    {% for i in p %}
+	<tr>
+		<td>{{ i.facility_name }}</td>
+		<td>{{ i.description }}</td>
+{#    <td>{{ i.status }}</td>#}
+{#    <td><a href="{% url 'apr' idd=i.facility_id %}">approve</a> </td>#}
+{#    <td><a href="{% url 're' idd=i.facility_id %}">reject</a> </td>#}
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

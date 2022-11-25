@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" width="70%">
+	<tr class="btn-primary" height="50px">
+		<th>uid</th>
+		<th>Feedback</th>
+	</tr>
+    {% for i in x %}
+	<tr>
+		<td>{{ i.feedback_id }}</td>
+		<td>{{ i.feedback }}</td>
+	</tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
