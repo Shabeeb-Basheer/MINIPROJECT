@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>SERVICES</h1>
+<form method="post">
+    {% csrf_token %}
+	<table>
+		<tr>
+			<td>Service Name</td>
+			<td><input type="text" name="sname"></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td><input type="text" name="des"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="add"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
+{% endblock %}
